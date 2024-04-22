@@ -44,7 +44,7 @@ public class UI extends JFrame implements ActionListener{
 	    add( label, BorderLayout.NORTH ); 			    // add the label to the JFrame
 	    
 	    viewPanel = new JPanel(); 						//View panel
-	    viewPanel.setBackground(Color.gray);
+	    viewPanel.setBackground(Color.white);
 	    viewPanel.setLayout(new FlowLayout());
 	    
 	    openButton = new JButton("Open");
@@ -57,12 +57,14 @@ public class UI extends JFrame implements ActionListener{
 	
 	public void createDashBoard() {
 		dashBoardPanel = new JPanel();					//Dash-board panel
-	    dashBoardPanel.setBackground(Color.white);
+	    dashBoardPanel.setBackground(Color.gray);
 	    dashBoardPanel.setLayout(new BoxLayout(dashBoardPanel,BoxLayout.Y_AXIS));
 	    
 	    try {
 	    	BufferedImage logo =  ImageIO.read(new File("C:\\Users\\campb\\Downloads\\logo.png"));
-	    	JLabel bcLogo = new JLabel(new ImageIcon(new ImageIcon(logo).getImage().getScaledInstance(80, 40, java.awt.Image.SCALE_SMOOTH)));
+	    	JLabel bcLogo = new JLabel(new ImageIcon(new ImageIcon(logo).getImage().getScaledInstance(100, 40, java.awt.Image.SCALE_SMOOTH)));
+	    	bcLogo.setBackground(Color.white);
+	    	bcLogo.setOpaque(true);
 	    	dashBoardPanel.add(bcLogo);
 	    }
 	    catch(Exception e) {
